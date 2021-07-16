@@ -1,0 +1,303 @@
+.h-scale,
+.v-scale {
+    align-self: stretch
+}
+
+.scale,
+.top {
+    top: 0
+}
+
+.bottom,
+.scale,
+.v-scale {
+    bottom: 0
+}
+
+a {
+    text-decoration: initial
+}
+
+.component,
+.frame {
+    position: absolute
+}
+
+.component *,
+.frame * {
+    position: absolute;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start
+}
+
+.right {
+    right: 0;
+    left: auto
+}
+
+.left {
+    left: 0;
+    right: auto
+}
+
+.h-scale,
+.left_right,
+.scale {
+    left: 0;
+    right: 0
+}
+
+.h-scale {
+    flex-direction: column
+}
+.v-scale {
+    top: 0;
+    flex-direction: row
+}
+
+.button {
+    cursor: pointer
+}
+
+.clip {
+    overflow: hidden
+}
+
+.text span {
+    align-self: flex-start;
+}
+
+
+#color-palette {
+    width: 158px;
+    height: 157px;
+    left: 13px;
+    top: 88px;
+    display: flex;
+    flex-wrap: wrap;
+    position: absolute;
+    }
+
+.swatch {
+        width: 24px;
+        height: 24px;
+        -moz-border-radius: 12px;
+        -webkit-border-radius: 12px;
+        border-radius: 12px;
+        margin: 3px;
+    }
+
+#MainFrame {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: rgb(113, 142, 143);
+}
+
+#TopBar {
+    background: rgb(40, 83, 82);
+    width: 375px;
+    height: 78px;
+}
+
+#RGBInput {
+    background: rgb(229, 229, 229);
+    border-radius: 10px;
+    left: 184px;
+    width: 90px;
+    top: 46px;
+    height: 20px;
+}
+
+#Submit {
+    background: rgb(113, 142, 143);
+    border-radius: 100px;
+    left: 294px;
+    width: 60px;
+    top: 46px;
+    height: 22px;
+    font-family: Salsa;
+}
+
+#Draw {
+    background: rgb(227, 146, 19);
+    border-radius: 100px;
+    left: 184px;
+    width: 49px;
+    top: 83px;
+    height: 32px;
+}
+
+#myCanvas {
+    left: 33px;
+    top: 220px;
+}
+
+#Eraser {
+    background: rgb(154, 73, 10);
+    border-radius: 100px;
+    left: 265px;
+    width: 49px;
+    top: 84px;
+    height: 32px;
+}
+
+#Erase_Sign {
+    background-image: url("https://s3-alpha-sig.figma.com/img/ec38/8d0d/49dbd8840a8ce533d4e4ae59c1350ab5?Expires=1626652800&Signature=O-B3gLC90hmWc6cwKz23Il9prUG0XOHH9pQEf5OlpZNliZq1LLcXN5uTiVP9AHdMUxqYucrTO0J4e~Nt0BWgMu5RvYrCB6p2gQZzoKCFd3EGBS1D0tMLwU4rxZ-7Jt4gAXDZViKzdlS5L~neNHanAu-QnzkVRBxHtwSq~JiDiMicsqo6fAqd8FvfqcrKzfp8r3JC37e-L8kYCa~EMajx7TfseExTRfBt~kJo2zrvZUmQfuZObYglFp8nwLgSPINJGMY~3fxnP7vrGerOuGfkOuV67MKsjgudskMNuh7W6JQbRKho6hO5oMudilYNmQq3XedtezyIE3Rjg7JNj5T1cA__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    pointer-events:none;
+    left: 279px;
+    width: 21px;
+    top: 88px;
+    height: 21px;
+}
+
+#Draw_Sign {
+    background-image: url("https://s3-alpha-sig.figma.com/img/113f/6751/6f49d2cba6a08e5f428068a18006832c?Expires=1626652800&Signature=TuOn-94agMpsLMpvZmNNfTOs8V72Fs9ri32Qx5iJ~JkBldSdak1wHx-mKOqavi9SWJ1fZT02rCaRScDYC3qfHpxt4hT1zuq9NTEYEbGCS5lBN2vK0SS9~PneQ2jRwVKYOJRwYXw59d2hOFW0J~zUXzdVWpLjawIkZg3ImDZxHFDENaZKCgl-Zv2Gyz8VTRRM7jS3~uaF3C6aBfkMYwM7zmCvtjDgD0spo9w1aCDxspKJINhKFABITsD7QuJP5imuRvyNoLMrrhRaqns2DMfU-GuGd6cYZwrT6CTfPqrS96rXtRTE3DacxizWAMHX-PL2auZ2zJk-GLCwCjeBzE4TVA__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    pointer-events:none;
+    left: 198px;
+    width: 21px;
+    top: 88px;
+    height: 21px;
+}
+
+#Reverse {
+    background: rgb(229, 229, 229);
+    border-radius: 100px;
+    left: 184px;
+    width: 49px;
+    top: 126px;
+    height: 32px;
+}
+
+#Reverse_Sign {
+    background-image: url("https://s3-alpha-sig.figma.com/img/7ebd/a952/cfb20508cf9fc646c99df9e2310bdf0c?Expires=1626652800&Signature=Ipud2V9~YlJUxOwcifrQZ4rTQL7lR4qvzcBwRuUTcBlHMdLVgxLORNwXVPP-48QyfiJamx~SlbwQ7g3UwsaJ2jsOszoZd9YEMVIjdwJtSfC587bn4Xn6BPGelFyMHeiNvaMK16d8vnvJ9YbFa1FhiUDWRIilxKQ~6Stdl3F9XoLgroPAZv8esBzaikeoMx1UftjM6b8MzfqptPJAGAiV9QSrgNDe-J5lXlChgoWCfP7VC7f5TFpM-gIRUHHzN4h9Iu4~X5tS7-Gcqk~i6u4nRaPO776XMJEAZDTWB2vT5rJ9dMEiEmZ51~ev4AxDXmpsVm5GXSnhDnV13Pt58DYETg__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    pointer-events:none;
+    left: 198px;
+    width: 21px;
+    top: 131px;
+    height: 21px;
+}
+
+#Redo {
+    background: rgb(229, 229, 229);
+    border-radius: 100px;
+    left: 265px;
+    width: 49px;
+    top: 126px;
+    height: 32px;
+}
+
+#Redo_Sign {
+    background-image: url("https://s3-alpha-sig.figma.com/img/7ebd/a952/cfb20508cf9fc646c99df9e2310bdf0c?Expires=1626652800&Signature=Ipud2V9~YlJUxOwcifrQZ4rTQL7lR4qvzcBwRuUTcBlHMdLVgxLORNwXVPP-48QyfiJamx~SlbwQ7g3UwsaJ2jsOszoZd9YEMVIjdwJtSfC587bn4Xn6BPGelFyMHeiNvaMK16d8vnvJ9YbFa1FhiUDWRIilxKQ~6Stdl3F9XoLgroPAZv8esBzaikeoMx1UftjM6b8MzfqptPJAGAiV9QSrgNDe-J5lXlChgoWCfP7VC7f5TFpM-gIRUHHzN4h9Iu4~X5tS7-Gcqk~i6u4nRaPO776XMJEAZDTWB2vT5rJ9dMEiEmZ51~ev4AxDXmpsVm5GXSnhDnV13Pt58DYETg__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA");
+    background-size: cover;
+    transform: rotateY(180deg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    pointer-events:none;
+    left: 279px;
+    width: 21px;
+    top: 131px;
+    height: 21px;
+}
+
+#Share {
+    background: rgb(229, 229, 229);
+    border-radius: 100px;
+    left: 266px;
+    width: 49px;
+    top: 173px;
+    height: 32px;
+}
+
+#Share_Sign {
+    background-image: url("https://s3-alpha-sig.figma.com/img/31e2/8339/382d25d05931e72b5ba0195955105ec6?Expires=1626652800&Signature=VUq-05CEuaOK9hO0cELrVKHObVDosLu2pvaifx3gHX-zTbpLzroWwxh3Y2ngpJ2ZTQ7TEN3XoGgjo0rs7yO~yR9EP7epwHrugH9DZTtScWQr3boxZ35z~3K05qRVNnwvN12mCW--M4M9c~SWU4aLmydg4UG20VDp8Z3QLFLYTLp8qUgtIewYXE9NsAIy9gM5LU9oEu~PWvqyq7lDYC2KP6iBlCMd0FMSFxoi0tDdcoCRMQ6WAIexQu7vGYSSVd2EoBrWRh-gGWUXVDgjmnfOhP4bjmuynE-CH033rIoAKUnA2u4H9Sct8U9KgjyrRyF4clpdzF5FnpSEgPdO0Rn8bw__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    pointer-events:none;
+    left: 280px;
+    width: 21px;
+    top: 178px;
+    height: 21px;
+}
+
+#Tool {
+    background: rgb(229, 229, 229);
+    border-radius: 100px;
+    left: 184px;
+    width: 49px;
+    top: 173px;
+    height: 32px;
+}
+
+#Tool_Sign {
+    background-image: url("https://s3-alpha-sig.figma.com/img/f17c/666d/3f42c31a7e85dce4617e11a9d06e44af?Expires=1626652800&Signature=ZkWH-0jYienWUK3MQIt0ccs94wXfKIBRyrc1Tp1UwYFtEb4bhqml-eNqu~MfWCMShOzsO3jfDSKX0LfML~Suno5X-yWRLH7b3cC9YQgR9p-ItbP1EflyDzlC0dDXe0GzehL3qnwy2amL-JFUnE6b0vrv2v5onZLexIqylIP1eUSxxxrWTfC9Ld-zYxDu8rJLmCRQ6VIjEuw4R-ih~FmFlMJ5iIu-Q8FBtZsonNW1-0qYQ6AaIAzda7CAuzqy6Im2HGGu-koTKpF7~62bWT-fjfVcVEmIkg78QRsWKun-LVJR5bU6CglzqP40PcY3EP1sRTDMpufzxpsTByh-79l1jA__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    left: 198px;
+    width: 21px;
+    top: 178px;
+    height: 21px;
+}
+
+#Back {
+    background: rgb(229, 229, 229);
+    border-radius: 100px;
+    left: 13px;
+    width: 49px;
+    top: 31px;
+    height: 32px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+
+#Back_Frame {
+    width: 29px;
+    height: 32px;
+    overflow: hidden;
+    left: 23px;
+    top: 31px;
+}
+
+    #Back_Arrow {
+    position: absolute;
+    width: 29px;
+    height: 32px;
+    left: 23px;
+    top: 31px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    }
+
+    #Share_Frame {
+    width: 375px;
+    height: 375px;
+    overflow: hidden;
+    display: none;
+    top: 437px;
+}
+
+    #Share_Image {
+        background-image: url("https://s3-alpha-sig.figma.com/img/0d12/fae0/77a1ef736599b4b684f312b3ade113b9?Expires=1627257600&Signature=QVgf~0XcV9h8-I1a2awjhTqqpPDZbL2-KoHtFVPw-UUHF7ZzTXchN6RktChDKPwZD5UKl0OmnbaoM6JrZU8-OZ1kLU86g~VYCWMAvQfbpTHqtLSCg77hNezwvvhSh3z1Xke3o8XR2PeBtmT1n0PCWD1bXyEsuPu-nGmFbK9pDlEqyZiVscjwUaHSU92a0QyspdPfFCb416Cs7FGlDhBY3zom8WH~79i~r4mYoc4xl-OYraUPNsY0Xk4ZKsXfFnHGp~QdYL6cE-0H7HglKAtXIeoMh8PfAdmQ-xTJcu46BrgLuSg3IpMZFuVawdAhvo2~d-5cRNvWQvMdefLf0rq-hg__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        display: none;
+        width: 375px;
+        height: 375px;
+    }

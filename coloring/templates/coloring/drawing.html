@@ -1,0 +1,183 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>MainDrawer</title>
+  <script type="text/javascript" src="{% static 'coloring/vendors/jquery/jquery-3.3.1.min.js' %}"></script>
+  <script type="text/javascript" src="{% static 'coloring/vendors/paper/paper-full.min.js' %}"></script>
+  <link rel="stylesheet" type="text/css" href="{% static 'coloring/vendors/CSSs/Drawing.css' %}">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Salsa:400">
+  <script type="text/javascript" canvas="canvas">
+	window.onload = function() {
+		var canvas = document.getElementById('myCanvas');
+
+		// coloring page
+		var mandala = {
+			item: null,
+			lastClicked: null,
+			filePath: '/static/coloring/images/mandala-freepik.svg'
+		};
+
+		// color palette
+		var cp = {
+			history: ["#FF0000", "#00FF00"], // black selected by default
+			options: [],
+			$container: $('#color-palette')
+		}
+
+		var last = {
+			place: 0,
+			color: 0,
+			//Reversed?
+			FLAG: 0,
+			//For Redo Use
+			lastcolor: 0
+		}
+
+		function myCustomInteraction() {
+			var tool = new paper.Tool();
+
+			tool.onMouseDown = function (event) {
+				var hit = mandala.item.hitTest(event.point, { tolerance: 10, fill: true });
+				if (hit) {
+						// Color pallette keeps track of the full history of colors, though we
+						// only color in with the most-recent color.
+					last.place = hit.item
+					last.color = hit.item.fillColor
+					last.FLAG = 0
+					console.log(last)
+					hit.item.fillColor = cp.history[cp.history.length - 1];
+					
+				}
+			}
+		}
+
+		// create a color palette with the given colors
+		function createColorPalette(colors){
+
+			// create a swatch for each color
+			for (var i = colors.length - 1; i >= 0; i--) {
+				// .css("width", "20px").css("height", "20px")
+				var $swatch = $("<div>").css("background-color", colors[i])
+								   .addClass("swatch");
+				$swatch.click(function(){
+					// add color to the color palette history
+					//   cp.history.push($(this).css("background-color"));
+					cp.history=[($(this).css("background-color"))];
+				});
+				cp.$container.append($swatch);
+			}
+		}
+
+		// loads a set of colors from a json to create a color palette
+		function getColorsCreatePalette(){
+			cp.$container.html(" ");
+			$.getJSON('/static/coloring/vendors/material/material-colors.json', function(colors){
+				var keys = Object.keys(colors);
+				for (var i = keys.length - 1; i >= 0; i--) {
+					cp.options.push(colors[keys[i]][500]);
+				}
+				createColorPalette(cp.options);
+			});
+		}
+
+		function init(custom){
+			paper.setup(canvas);
+			getColorsCreatePalette();
+
+			paper.project.importSVG(mandala.filePath, function(item) {
+				mandala.item = item._children["design-freepik"];
+				paper.project.insertLayer(0,mandala.item);
+
+				if (custom) {
+					myCustomInteraction();
+				} else {
+					myGradientInteraction();
+				}
+
+			});
+		}
+
+		// Set up the mandala interactivity.
+		init(true);
+		//Color Enter
+		var submitcolor = document.getElementById("Submit");
+		$("#Submit").click(function(){
+			var rgb = '#' + $("#RGBInput").val()
+	  		cp.history=[rgb]
+			console.log(cp)
+		});
+		//Eraser
+		$("#Eraser").click(function(){
+	  		cp.history=[cp.history[0],"#FFFFFF"]
+			console.log(cp)
+		});
+		//Draw
+		$("#Draw").click(function(){
+	  		cp.history=[cp.history[0]]
+			console.log(cp)
+		});
+		//Reverse
+		$("#Reverse").click(function(){
+			console.log(last)
+			if (last.FLAG == 0) {
+				last.lastcolor = last.place.fillColor
+				last.place.fillColor = last.color;
+				last.FLAG = 1
+			} else {
+				console.log("Reversed")
+			}
+		});
+		//Redo
+		$("#Redo").click(function(){
+			console.log(last)
+			if (last.FLAG == 1) {
+				last.place.fillColor = last.lastcolor;
+				last.FLAG = 0
+			} else {
+				console.log("Redo")
+			}
+		});
+		$("#Share").click(function(){
+			console.log(123)
+			$("#Share_Frame").toggle()
+			$("#Share_Image").toggle()
+			console.log($("#Share_Image"))
+		});
+	}
+</script>
+
+</head>
+<body>
+<div class="frame" id="MainFrame">
+	<div class="left top rectangle" id="TopBar"></div>
+	<input id="RGBInput"></input>
+	<button class="left top rectangle" id="Submit">Confirm</button>
+	<button class="left top rectangle" id="Draw"></button>
+	<canvas id="myCanvas" width="310px" height="564px"></canvas>
+	<button class="left top rectangle" id="Eraser"></button>
+	<div class="left top rectangle" id="Erase_Sign"></div>
+	<div class="left top rectangle" id="Draw_Sign"></div>
+	<button class="left top rectangle" id="Reverse"></button>
+	<div class="left top rectangle" id="Reverse_Sign"></div>
+	<button class="left top rectangle" id="Redo"></button>
+	<div class="left top rectangle" id="Redo_Sign"></div>
+	<button class="left top rectangle" id="Share"></button>
+	<div class="left top rectangle" id="Share_Sign"></div>
+	<div class="left top rectangle" id="Tool"></div>
+	<div class="left top rectangle" id="Tool_Sign"></div>
+	<a href="/coloring/choose_a_theme" role="button">
+		<div class="left top rectangle" id="Back">
+		<img src="https://s3-us-west-2.amazonaws.com/figma-alpha-api/img/d845/bdbd/192efface7651c765716204fb4d17701">
+		</div>
+	</a>
+</div>
+	<div class="frame" id="Share_Frame">
+		<div class="left top rectangle" id="Share_Image"></div>
+	</div>
+	<div id="color-palette"></div>
+</body>
+
+</html>

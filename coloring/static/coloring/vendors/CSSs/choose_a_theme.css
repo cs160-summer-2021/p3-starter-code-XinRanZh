@@ -1,0 +1,155 @@
+.h-scale,
+.v-scale {
+    align-self: stretch
+}
+
+.scale,
+.top {
+    top: 0
+}
+
+.bottom,
+.scale,
+.v-scale {
+    bottom: 0
+}
+
+a {
+    text-decoration: initial
+}
+
+.component,
+.frame {
+    position: absolute
+}
+
+.component *,
+.frame * {
+    position: absolute;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start
+}
+
+.right {
+    right: 0;
+    left: auto
+}
+
+.left {
+    left: 0;
+    right: auto
+}
+
+.h-scale,
+.left_right,
+.scale {
+    left: 0;
+    right: 0
+}
+
+.h-scale {
+    flex-direction: column
+}
+
+.v-scale {
+    top: 0;
+    flex-direction: row
+}
+
+.button {
+    cursor: pointer
+}
+
+.clip {
+    overflow: hidden
+}
+
+.text span {
+    align-self: flex-start;
+}
+
+
+#MainFrame {
+    width: 375px;
+    height: 812px;
+    overflow: hidden;
+    background: rgb(113, 142, 143);
+}
+
+#TopBar {
+    background: rgb(40, 83, 82);
+    width: 375px;
+    height: 78px;
+}
+
+#Home {
+    background: rgb(229, 229, 229);
+    border-radius: 100px;
+    left: 13px;
+    width: 49px;
+    top: 31px;
+    height: 32px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 9999;
+}
+
+#Home_Sign {
+    cursor: pointer;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    color: black;
+}
+
+#Top {
+    inset: 12.5% 12.5% 6.25%;
+}
+
+#Bot {
+    inset: 7.55% 3.12059% 43.75% 3.12151%;
+}
+
+#Topic {
+    font-family: Salsa;
+    font-size: 30px;
+    font-weight: 400;
+    letter-spacing: 0px;
+    color: rgb(227, 146, 19);
+    vertical-align: middle;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    line-height: 36px;
+    top: 1.11%;
+    bottom: 89.29%;
+}
+
+#ThemeFrame {
+    width: 375px;
+    height: 734px;
+    overflow: hidden;
+    top: 78px;
+}
+
+
+
+#FlowerTag {
+    font-family: Salsa;
+    font-size: 24px;
+    font-weight: 400;
+    letter-spacing: 0px;
+    color: rgb(255, 255, 255);
+    vertical-align: middle;
+    text-align: center;
+    justify-content: center;
+    width: 88px;
+    align-items: center;
+    line-height: 36px;
+    height: 35px;
+    left: 10px;
+    top: 19px;
+}

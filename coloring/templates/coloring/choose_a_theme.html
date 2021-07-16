@@ -1,0 +1,40 @@
+{% load static %}
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>choose_a_theme</title>
+  <script type="text/javascript" src="{% static 'coloring/vendors/jquery/jquery-3.3.1.min.js' %}"></script>
+  <script type="text/javascript" src="{% static 'coloring/vendors/paper/paper-full.min.js' %}"></script>
+  <link rel="stylesheet" type="text/css" href="{% static 'coloring/vendors/CSSs/choose_a_theme.css' %}">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Salsa:400">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+</head>
+<body style="width: 375px; height: 812px;">
+<div class="frame" id="MainFrame" style="width: 375px; height: 812px;">
+	<div class="left top rectangle" id="TopBar"></div>
+	<a href="/coloring/home_page" role="button" id="Home">
+		<i class="bi bi-house"  id="Home_Sign"></i>
+	</a>
+	<div class="scale text" id="Topic">Basic scenes</div>
+	<div class="frame" id="ThemeFrame">
+		<div class="left top rectangle" id="FlowerTheme"></div>
+		<div class="left top text" id="FlowerTag">Flower</div>
+	</div>
+</div>
+
+</body>
+<script>
+    document.getElementById("FlowerTheme").onclick=function(){
+        window.location.href = "drawing";
+    }
+    </script>
+<style>
+		#FlowerTheme {
+			background-image: url("{% static 'coloring/images/flower.png' %}");
+			left: 44px;
+			width: 288px;
+			top: 54px;
+			height: 288px;
+		}
+    </style>
+</html>
